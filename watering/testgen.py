@@ -21,6 +21,8 @@ def print_test(n):
 
     curr_test += 1
 
+print_test(3) # sample test
+
 print_test(1)
 print_test(2)
 print_test(MAX_N)
