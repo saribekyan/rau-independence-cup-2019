@@ -20,7 +20,7 @@ int main(int argc, char * argv[]) {
 
     long long currX = 0;
     for (int i = 0; i < n; ++i) {
-        long long targetX  = inf.readInt(-2 * XMAX, 2 * XMAX);
+        long long targetX  = ans.readInt(-2 * XMAX, 2 * XMAX);
         minPossibleTravel += abs(targetX - currX);
 
         while (true) {
@@ -33,6 +33,10 @@ int main(int argc, char * argv[]) {
                 break;
             } else {
                 currX += jump;
+                if (currX > XMAX || currX < -XMAX) {
+                    tout << "went-too-far" << endl << flush;
+                    quitf(_wa, "Went too far");
+                }
                 totalTravel += abs(jump);
                 cout << "no" << endl;
             }

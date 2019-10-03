@@ -10,7 +10,7 @@ import math
 
 script_path = os.path.realpath(__file__)
 dir_path    = os.path.dirname(script_path)
-test_dir    = os.path.join(dir_path, '../ejudge/tests/C')
+test_dir    = os.path.join(dir_path, '../../tests/C')
 
 if not os.path.exists(test_dir):
     os.mkdir(test_dir)
@@ -20,8 +20,9 @@ def print_test(Delta):
     global curr_test
     assert(curr_test <= N_TESTS)
 
-    fname = os.path.join(test_dir, '%03d' % curr_test)
-    print fname
+    in_fname = os.path.join(test_dir, '%03d' % curr_test)
+    ans_fname = os.path.join(test_dir, '%03d.a' % curr_test)
+    print in_fname
 
     n = len(Delta)
     assert(NMIN <= n and n <= NMAX)
@@ -29,11 +30,14 @@ def print_test(Delta):
     X = [ Delta[0] ] * n
     for i in range(1, n):
         X[i] = X[i - 1] + Delta[i]
+        assert(abs(X[i]) <= XMAX)
 
-    with open(fname, 'w') as f:
+    with open(in_fname, 'w') as f:
         f.write('%d\n' % len(X))
+
+
+    with open(ans_fname, 'w') as f:
         for x in X:
-            assert(abs(x) <= XMAX)
             f.write('%d\n' % x);
 
     curr_test += 1
