@@ -1,17 +1,18 @@
 #!/bin/bash
 
 problemId=$1
-echo $executable
-if [ ! -f $executable ]; then
-    pysol=$problemId*/sol.py
-    if [ ! -f $pysol ]; then
+executable=`ls problems/$problemId*/a.out 2> /dev/null`
+if [ -z $executable ]; then
+    pysol=`ls problems/$problemId*/sol.py 2> /dev/null`
+    if [ -z $pysol ]; then
         echo "No solution found for problem $problem"
         exit 1
     fi
     executable="python $pysol"
 fi
+echo $executable
 
-FILES=ejudge/tests/$problemId/[0-9][0-9][0-9]
+FILES=tests/$problemId/[0-9][0-9][0-9]
 for f in $FILES
 do
     echo "Running $f"
