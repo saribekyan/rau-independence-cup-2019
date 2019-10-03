@@ -15,9 +15,10 @@ int main() {
         while (true) {
             cout << next - curr << '\n';
 
+            int pos;
             string found;
-            cin >> found;
-            if (found == "yes") {
+            cin >> found >> pos;
+            if (found == "Yes") {
                 break;
             }
             curr = next;
