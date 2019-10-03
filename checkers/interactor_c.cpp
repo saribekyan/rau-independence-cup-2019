@@ -46,7 +46,7 @@ int main(int argc, char * argv[]) {
 
     if (totalTravel <= 8 * minPossibleTravel) {
         tout << "ok" << endl << flush;
-        quitf(_ok, "%lldd steps <= 8 * %lld", totalTravel, minPossibleTravel);
+        quitf(_ok, "%lld steps leq 8 * %lld", totalTravel, minPossibleTravel);
     } else {
         tout << "too-many-steps" << endl << flush;
         quitf(_wa, "Too many steps");
