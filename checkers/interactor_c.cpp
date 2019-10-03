@@ -29,7 +29,7 @@ int main(int argc, char * argv[]) {
                 currX > targetX && targetX >= currX + jump) {
                 totalTravel += abs(currX - targetX);
                 currX = targetX;
-                cout << "yes" << endl;
+                cout << "Yes " << currX << endl;
                 break;
             } else {
                 currX += jump;
@@ -38,7 +38,7 @@ int main(int argc, char * argv[]) {
                     quitf(_wa, "Went too far");
                 }
                 totalTravel += abs(jump);
-                cout << "no" << endl;
+                cout << "No " << currX << endl;
             }
             cout.flush();
         }
