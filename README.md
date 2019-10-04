@@ -5,3 +5,5 @@ Problem statements: https://docs.google.com/document/d/19bt08xBsF9iOmKGIT5Y-nHlA
 - [ ] Write a test solution for watering (very low priority).
 - [ ] Interactors tests contain answers too, is this ok? Not the cleanest way, but who cares.
 - [ ] Write a test solution for quiz.
+- [ ] Write a C++ solution for feed, so that it's fast. Also can write a brute force.
+
