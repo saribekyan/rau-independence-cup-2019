@@ -44,6 +44,9 @@ def rand_question_marks(n, q):
 
     return ''.join(digits)
 
+print_test('1?23')
+print_test('3?2?')
+
 print_test('1')
 print_test('8')
 print_test('?')
