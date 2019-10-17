@@ -8,4 +8,6 @@ Problem statements: https://docs.google.com/document/d/19bt08xBsF9iOmKGIT5Y-nHlA
 - [ ] Write a C++ solution for feed, so that it's fast. Also can write a brute force.
 - [ ] Test F (homework), which has a checker
 - [ ] Low priority: test G .
+- [ ] Write a test (but slow) solution for J
+
 
