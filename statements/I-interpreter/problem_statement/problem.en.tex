@@ -1,8 +1,63 @@
 \problemname{Interpreter}
-todo
+
+After mastering mathematics and gardening, Armen wants to learn programming.
+He wants to start from the basics and learn Basic.
+He does not find it easy, and has asked you to write an interpreter for a simple version of Basic prgramming language.
+
+Below is the formal description of a language:
+\begin{verbatim}
+    var := ‘a’ .. ‘z’
+    int := ‘0’ .. ‘65535’
+    arg := <var> | <int>
+    op := ‘+’ | ‘-’ | ‘*’ | ‘/’
+    comp := ‘<’ | ‘=’ | ‘>’
+    test := <arg> <comp> <arg>
+    expr := <arg> | <arg> <op> <arg>
+    command := ‘PRINT’ <arg> |
+               ‘GOTO’ <int> |
+               ‘END’ |
+               ‘IF’ <test> ‘THEN’ <command> | 
+               <var> = <expr>
+\end{verbatim}
+
+The program consists of $n \geq 1$ lines, numbered from $1$ to $n$.
+The string on each line is an instance of a \texttt{command}, defined formally above.
+The last command is always \texttt{END}.\hnote{Why is this necessary? As long as the program reaches END somewhere, we do not need END at the end.}
+Commands are executed sequentially starting from first command unless a \texttt{GOTO} command is encountered.
+
+Below is the description of the commands:
+\begin{description}
+    \item[\texttt{PRINT <arg>}] -- prints the value of the constant or variable, followed by a line break.
+    It is guaranteed that the value of the variable is defined at the point when it is being used.
+    
+    \item[\texttt{GOTO <int>}] -- continue the execution to the command starting from the given line number.
+    It is guaranteed that the argument of a command is natural number between $1$ and $n$.
+    
+    \item[\texttt{IF <test> THEN <command>}] -- if after substituting the values of the variables in \texttt{test}, the statement becomes true, then the given command is executed.
+    Otherwise, the next command is executed.
+    It is guaranteed that the values of variables presented in the statement \texttt{test} are defined.
+    
+    \item[\texttt{END}] -- the command that finishes the execution of the program.
+    After this command the interpreter stops.
+    
+    \item[\texttt{<var> = <expr>}] -- value of the expression \texttt{expr} is calculated and assigned to the variable \texttt{var}.
+    It is guaranteed that the values of the variables in \texttt{expr} are defined.
+\end{description}
 
 \section*{Input}
-todo
+The first line of the input contains an integer $n$, ($1 \leq n \leq 1000$), the number of commands.
+The next $n$ lines contain the source code of the program starting from the first command.
+
+It is guaranteed that
+\begin{itemize}
+    \item all elements of commands are separated by a space;
+    \item all division operations are integer divisions, and the remainder is discarded;
+    \item after any arithmetic calculations the value of variables will be between 0 and 65535, and there will be no division by 0;
+    \item the program is syntactically correct;
+    \item that all commands contain no more than 60 symbols;
+    \item the program will finish the execution at a command \texttt{END} after no more than 10000 commands.
+\end{itemize}
 
 \section*{Output}
-todo
+The output should contain the result of the execution of the program given in the input, i.e.~what the program will print to the output.
+
