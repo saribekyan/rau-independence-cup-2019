@@ -1,0 +1,12 @@
+11
+a = 1
+b = 1
+n = 2
+IF n = 20 THEN GOTO 11
+PRINT a
+c = a + b
+a = b
+b = c
+n = n + 1
+GOTO 4
+END
