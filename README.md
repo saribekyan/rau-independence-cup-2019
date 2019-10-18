@@ -12,4 +12,7 @@ Problem statements: https://docs.google.com/document/d/19bt08xBsF9iOmKGIT5Y-nHlA
 - [ ] Write a test (but slow) solution for K
 - [ ] Probably reorder some problems so that the hard ones are not all in the end
 - [ ] Make sure the largest number of in the solution of K is within  long long.
+- [ ] Add 1-2 maximal tests to task M-Messages (Eduard)
+- [ ] Add mroe tests for task I-Interpreter (Eduard)
+
 
