@@ -6,17 +6,17 @@ He does not find it easy, and has asked you to write an interpreter for a simple
 
 Below is the formal description of a language:
 \begin{verbatim}
-    var := ‘a’ .. ‘z’
-    int := ‘0’ .. ‘65535’
+    var := 'a' .. 'z'
+    int := '0' .. '65535'
     arg := <var> | <int>
-    op := ‘+’ | ‘-’ | ‘*’ | ‘/’
-    comp := ‘<’ | ‘=’ | ‘>’
+    op := '+' | '-' | '*' | '/'
+    comp := '<' | '=' | '>'
     test := <arg> <comp> <arg>
     expr := <arg> | <arg> <op> <arg>
-    command := ‘PRINT’ <arg> |
-               ‘GOTO’ <int> |
-               ‘END’ |
-               ‘IF’ <test> ‘THEN’ <command> | 
+    command := 'PRINT' <arg> |
+               'GOTO' <int> |
+               'END' |
+               'IF' <test> 'THEN' <command> | 
                <var> = <expr>
 \end{verbatim}
 
