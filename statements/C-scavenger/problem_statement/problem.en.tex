@@ -1,0 +1,41 @@
+\problemname{Scavenger Hunt}
+
+Your friend Armen is playing a game of scavenger hunt.
+The game takes place on the horizontal $x$ axis, and initially Armen is at coordinate $0$.
+In one second he can move one coordinate to the left or to the right.
+The organisers of the game place $n$ treasures, at integer coordinates $x_1,\dots, x_n$, respectively.
+These coordinates are unknown to you and Armen.
+Initially, Armen is given the description of treasure 1, and when he reaches $x_1$, he will recognise it.
+At that point he will be given the description of treasure 2, but, once again, not its coordinate.
+Then his goal would be to find treasure 2.
+When he reaches treasure 2, he is given the description of treasure 3, and so on, until he reaches all the treasures.
+
+The judges assess his performance based on how long it took him to find the items, compared to the minimum possible time, $T_{min} = \sum_{i = 0}^{n-1}|x_{i + 1} - x_i|$, where $x_0 = 0$.
+He receives a prize if he collects all the treasures in at most $8 \cdot T_{min}$ seconds.
+Write a program that will give instructions to Armen so that he wins the prize.
+
+\section*{Input and Output}
+This is an interactive problem.
+Your program will need to print instructions to Armen and, after each instruction, receive an input from Armen telling you whether he has reached the next treasure.
+First, your program must read one line containing an integer, the number of treasures $n$ ($100 \leq n \leq 1000$).
+Then it needs to print instructions to reach treasure 1.
+Each instruction must be one integer $h$, printed on a separate line.
+It means that you are instructing Armen to move from his current position $x$ to $x + h$.
+After each instruction, your program must read the feedback from Armen in one line.
+The line will be either ``\texttt{Yes }$x$'' or ``\texttt{No }$x$''.
+This will indicate whether Armen found the treasure, and also give you his current coordinate $x$.
+Once you receive a ``\texttt{Yes }$x$'' from Armen, you need to give him instructions to find the second treasure, and so on until the last treasure.
+Note that when Armen finds the treasure during the instruction, he stops at the treasure.
+
+It is guaranteed that no treasure is more than $10^9$ seconds away from the origin, thus, you are not allowed to give Armen instructions that will make him go farther.
+Below is an example interaction, for $n = 2$ to save space.
+In actual tests $100 \leq n \leq 1000$.
+
+{
+\renewcommand{\sampleinputname}{Armen's feedback}
+\renewcommand{\sampleoutputname}{Your instructions}
+\displaysample{../problems/C-scavenger/sample-interaction}
+}
+
+Note that, Armen does not need to finish the third instruction because he finds the first treasure at location 10 before finishing it.
+

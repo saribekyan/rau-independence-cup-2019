@@ -225,12 +225,14 @@
 
   %% Automatically include samples 1..#2
   \ifplastex\else
-  \foreach \SampleNum in {1,...,#2} { % ejudge hacks
-    \StrChar{#1}{1}[\problemLetter]
-    \IfFileExists{../tests/\problemLetter/00\SampleNum}{
-      \displaysample{../tests/\problemLetter/00\SampleNum}
-    }{}
-  }
+  \ifthenelse{#2>0}{
+      \foreach \SampleNum in {1,...,#2} { % ejudge hacks
+        \StrChar{#1}{1}[\problemLetter]
+        \IfFileExists{../tests/\problemLetter/00\SampleNum}{
+          \displaysample{../tests/\problemLetter/00\SampleNum}
+        }{}
+      }
+  }{}
   \fi
 }
 
@@ -308,7 +310,7 @@
 %% Define the command used to give sample data
 %% Takes filename as parameter
 \newcommand{\includesample}[1]{
-  \displaysample{\@problemid/data/sample/#1}
+  \displaysample{#1}
 }
 
 \newcommand{\displaysample}[1]{
