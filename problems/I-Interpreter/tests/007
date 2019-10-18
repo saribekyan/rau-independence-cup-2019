@@ -1,0 +1,21 @@
+20
+a = 1
+b = 1
+n = 2
+IF a = 1 THEN IF b = 1 THEN IF n < 4 THEN PRINT 100
+PRINT a
+a = a * b
+PRINT a
+a = a * a
+PRINT a
+a = a + a
+PRINT a
+a = a * n
+PRINT a
+a = a + a
+PRINT a
+a = a / a
+PRINT a
+a = a * 1234
+PRINT a
+END
