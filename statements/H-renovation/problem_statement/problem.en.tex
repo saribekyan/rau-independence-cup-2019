@@ -1,0 +1,22 @@
+\problemname{Renovation}
+
+To renovate his home, Armen has bought $n$ tools which he will put in his garage.
+The garage is long and narrow, with the entrance at one end.
+We will represent the garage as the $x$ axis, with the door being at coordinate $0$.
+He can place the tools at positive integer coordinates, only one tool per location.
+While Armen is working he always has exactly one tool with him, and the remaining $n - 1$ tools are in the garage.
+When he comes to the garage to get a new tool, he enters at coordinate 0, walks directly to where his required tool is, swaps it with the old tool, and walks back to the entrance.
+This means that the tools move in the garage throughout the renovation.
+
+Armen knows exactly in what order he will use the tools (some tools may get used more than once).
+He wants to know what is the minimal possible distance that he needs to walk in the garage to finish he renovation, if he arranges his tools optimally at the start.
+
+\section*{Input}
+The first line of the input contains two integers, $n$ and $m$ ($1 \leq n, m \leq 10^5$), the total number of tools, and the length of his renovation.
+The next line of the input contains $m$ space-separated integers between $1$ and $n$.
+Armen uses the tools in the order given by this sequence.
+At the start of the work, Armen already has the first tool of the sequence in his hand.
+It is guaranteed that the sequence does not have the same tool listed consecutively.
+
+\section*{Output}
+The only line of the output contains the least possible distance that Armen needs to walk in his garage to finish the renovation.
