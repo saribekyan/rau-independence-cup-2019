@@ -12,6 +12,17 @@
 \contestlogo{rau_logo_long.png}
 % \location{$\text{19}^{\text{th}}$ October 2019}
 
+\newif\ifdraft
+\drafttrue
+\newcommand{\hnote}[1]{%
+	\ifdraft {\color{red}[H: #1 ]}
+	\fi
+}
+\newcommand{\enote}[1]{%
+	\ifdraft {\color{blue}[H: #1 ]}
+	\fi
+}
+
 \begin{document}
 
 \problemlanguage{.en}
@@ -20,5 +31,15 @@
 
 % problem name and number of sample tests
 \includeproblem{A-bitonic}{2}
+\includeproblem{B-watering}{1}
+\includeproblem{C-scavenger}{0}
+\includeproblem{D-quiz}{2}
+\includeproblem{E-feed}{1}
+\includeproblem{F-homework}{2}
+\includeproblem{G-decoration}{3}
+\includeproblem{H-renovation}{2}
+\includeproblem{I-interpreter}{1}
+\includeproblem{J-quality}{2}
+
 
 \end{document}

@@ -1,0 +1,18 @@
+\problemname{Homework}
+
+In the math homework you are given a sequence of $n$ positive integers.
+You take the sum of every consecutive pair of numbers, to create a new sequence of $n - 1$ positive integers.
+You repeat the process until you have one number left, which is the final answer to the homework.
+For example, if you start with the sequence $(2, 1, 4, 5)$, you get sequences $(3, 5, 9)$ and $(8, 14)$, and finally $22$, the final answer to the homework.
+
+You have lost all of your math homework, except the final answer!
+But the teacher wants to see your full answer that includes the steps of your calculations.
+Write a program that will recover the full answer.
+
+\section*{Input}
+The only line of the input contains two integers, $n$ ($1 \leq n \leq n$) and $a$ ($1 \leq a \leq 10^9$), the number of elements in the original sequence and the final answer, respectively.
+
+\section*{Output}
+If you made a mistake and it is not possible to find an integer sequence of length $n$ with an answer $a$ print ``$-1$'' in the only line of the output.
+Otherwise, print $n$ lines, where the $i$th line contains the $i$th sequence of your full answer.
+Each sequence should be printed as space-separated integers.
