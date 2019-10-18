@@ -70,10 +70,18 @@ int calc (string s)
 
 
 
-void PRINT (const char x)
+void PRINT (const string s)
 {
   changeI = true;
-  cout << v[(int)(x - 'a')] << endl;
+  if (isalpha(s[0]))
+    cout << v[(int)(s[0] - 'a')] << endl;
+  else
+  {
+    istringstream iss(s);
+    int n;
+    iss >> n;
+    cout << n << endl;
+  }
 }
 
 void GOTO (int& i, const int num)
@@ -139,7 +147,7 @@ void DO (string s, int& i)
   }
   else if (s.substr(0, 5) == "PRINT")
   {
-    char name;
+    string name;
     iss >> temp >> name;
     PRINT(name);
   }
