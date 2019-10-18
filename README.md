@@ -9,5 +9,7 @@ Problem statements: https://docs.google.com/document/d/19bt08xBsF9iOmKGIT5Y-nHlA
 - [ ] Test F (homework), which has a checker
 - [ ] Low priority: test G .
 - [ ] Write a test (but slow) solution for J
-
+- [ ] Write a test (but slow) solution for K
+- [ ] Probably reorder some problems so that the hard ones are not all in the end
+- [ ] Make sure the largest number of in the solution of K is within  long long.
 
