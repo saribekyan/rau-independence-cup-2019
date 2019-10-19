@@ -147,6 +147,9 @@
 
     \vfill
     {
+      Time limit for all problems: 2 seconds \\ % hacky
+      Memory limit for all problems: 256MB \\ % hacky
+      \vspace{15pt}
       \Large\sf
       Problems are not ordered by difficulty.\\
       Do not open before the contest has started.
@@ -271,7 +274,7 @@
           \newread\ps@timelimitfile
           \openin\ps@timelimitfile=#2/.timelimit
           \read\ps@timelimitfile to\ps@timelimit
-          \\[2mm]{\Large Time limit:\ps@formattime{\ps@timelimit}}
+          \\[2mm]{\small Time limit:\ps@formattime{\ps@timelimit}}
         }{}
         \\[5mm]
       }
