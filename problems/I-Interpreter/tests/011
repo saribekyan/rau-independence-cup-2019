@@ -1,4 +1,4 @@
-37
+41
 a = 1
 b = 2
 c = 3
@@ -33,6 +33,10 @@ PRINT c
 PRINT e
 PRINT f
 PRINT z
-w = w * w * w - o * o * o
+w = w * w
+w = w * 23
+o = o * o
+o = 15 * o
+w = w - o
 PRINT w
 END
