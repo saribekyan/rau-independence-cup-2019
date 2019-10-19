@@ -1,9 +1,8 @@
-Problem statements: https://docs.google.com/document/d/19bt08xBsF9iOmKGIT5Y-nHlALubeTwfgKZuymWnA-dg
-
 ## Todo
 - [ ] Write a test solution for bitonic.
 - [ ] Write a test solution for watering (very low priority).
 - [ ] Interactors tests contain answers too, is this ok? Not the cleanest way, but who cares.
+- [ ] Test the interactor, make sure there is no better solution.
 - [ ] Write a test solution for quiz.
 - [ ] Write a C++ solution for feed, so that it's fast. Also can write a brute force.
 - [ ] Test F (homework), which has a checker
@@ -14,5 +13,4 @@ Problem statements: https://docs.google.com/document/d/19bt08xBsF9iOmKGIT5Y-nHlA
 - [ ] Make sure the largest number of in the solution of K is within  long long.
 - [ ] Add 1-2 maximal tests to task M-Messages (Eduard)
 - [ ] Add mroe tests for task I-Interpreter (Eduard)
-
-
+- [ ] Remove spaces from M-messages tests; also b_i and c_i are not necessary. See Input Description.
