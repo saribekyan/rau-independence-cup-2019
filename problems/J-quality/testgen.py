@@ -1,7 +1,7 @@
 N_TESTS = 24
 
 NMAX = 10 ** 9
-KXMAX = 16
+KXMAX = 50
 
 import os
 import random
@@ -50,25 +50,25 @@ print_test(3, 'aa', 1, 'aa', 1)
 print_test(10, 'aaa', 5, 'bbb', 5)
 
 # small edge cases
-print_test(100, 'x', KXMAX, 'y', KXMAX)
-print_test(1, 'abcd', KXMAX // 4, 'qwer', KXMAX // 4)
+print_test(100, 'x', 16, 'y', 16)
+print_test(1, 'abcd', 16 // 4, 'qwer', 16 // 4)
 print_test(100, 'a', 1, 'b', 1)
-print_test(100, rand_str(KXMAX), 1, rand_str(KXMAX), 1)
-print_test(100, rand_str(KXMAX, 1), 1, rand_str(KXMAX, 1), 1)
+print_test(100, rand_str(16), 1, rand_str(16), 1)
+print_test(100, rand_str(16, 1), 1, rand_str(16, 1), 1)
 
 # small random
 while curr_test <= N_TESTS // 2:
     n = random.randint(1, 1000)
-    ka = random.randint(1, KXMAX)
-    xa = rand_str(KXMAX // ka, random.randint(1, 26))
-    kv = random.randint(1, KXMAX)
-    xv = rand_str(KXMAX // kv, random.randint(1, 26))
+    ka = random.randint(1, 16)
+    xa = rand_str(16 // ka, random.randint(1, 26))
+    kv = random.randint(1, 16)
+    xv = rand_str(16 // kv, random.randint(1, 26))
 
     print_test(n, xa, ka, xv, kv)
 
 # edge cases
 print_test(NMAX, 'x', KXMAX, 'y', KXMAX)
-print_test(1, 'abcd', KXMAX // 4, 'qwer', KXMAX // 4)
+print_test(1, 'abcdefghij', KXMAX // 10, 'qwertyuiop', KXMAX // 10)
 print_test(NMAX, 'a', 1, 'b', 1)
 print_test(NMAX, rand_str(KXMAX), 1, rand_str(KXMAX), 1)
 print_test(NMAX, rand_str(KXMAX, 1), 1, rand_str(KXMAX, 1), 1)
