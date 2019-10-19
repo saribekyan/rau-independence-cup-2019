@@ -1,0 +1,13 @@
+12
+p = 2 * 2 * 3 - 4 * 2 + 100 * 10 * 3 - 2900
+i = 2
+IF i = p THEN GOTO 9
+j = p / i
+j = j * i
+IF j = p THEN GOTO 10
+i = i + 1
+GOTO 3
+PRINT p
+p = p + 1
+IF p < 200 THEN GOTO 2
+END
