@@ -11,12 +11,13 @@ Now Armen wants to how well their system of communication works.
 Thus, he has asked you to tell him, given the information he has, how many code words could match each message he receives.
 
 \section*{Input}
-The first line of the input contains two integers $n$ and $m$ ($1 \leq n, m \leq 50000$), the number of code words in Armen's and Vartan's dictionary, and the number of messages Armen receives.
+The first line of the input contains two integers $n$ and $m$ ($1 \leq n, m \leq 50000$), the number of code words in Armen's and Vartan's dictionary \enote{Maybe this should be "number of words that Armen can read?"}, and the number of messages Armen receives.
 The next $n$ lines of the input contain the partial code words that Armen is able to read, one per line, composed of $0$'s and $1$'s.
 Each line contains at least one character.
 The next $m$ lines describe the partial messages that Armen receives, in the same format as the code words.
 
-Armen is never able to read more than 10000 bits from each code word, and is never receives more than 10000 bits from Vartan.
+Armen is never able to read more than $10000$ bits from each code word, and he never receives more than $10000$ bits from Vartan.
+The total number of bits in the input (the sum of the lengths of the given binary strings) is at most $500000$.
 
 \section*{Output}
 The output contains $m$ lines.
