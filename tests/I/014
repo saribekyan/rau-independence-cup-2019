@@ -1,6 +1,7 @@
-5
+6
 GOTO 3
 GOTO 4
 GOTO 2
 r = 178
 PRINT r
+END
