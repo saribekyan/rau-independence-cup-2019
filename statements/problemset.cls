@@ -17,7 +17,7 @@
 \newif\if@samplenumbers\@samplenumberstrue
 \DeclareOption{nosamplenumbers}{\@samplenumbersfalse}
 
-\newif\if@clearevenpages\@clearevenpagestrue
+\newif\if@clearevenpages\@clearevenpagesfalse
 
 \DeclareOption{plainproblems}{
   \@footerfalse
@@ -155,7 +155,7 @@
 
   \end{center}
 
-  \cleardoublepage
+%  \cleardoublepage % this page is left almost blank after the cover page
   \setcounter{page}{1}
 }
 
