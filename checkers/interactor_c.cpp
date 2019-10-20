@@ -18,37 +18,75 @@ int main(int argc, char * argv[]) {
     long long totalTravel = 0;
     long long minPossibleTravel = 0;
 
-    long long currX = 0;
+    vector< long long > targets;
+    long long prev = 0;
     for (int i = 0; i < n; ++i) {
-        long long targetX  = ans.readInt(-2 * XMAX, 2 * XMAX);
-        minPossibleTravel += abs(targetX - currX);
+        long long t = ans.readInt(-2 * XMAX, 2 * XMAX);
+        targets.push_back(t);
+        minPossibleTravel += abs(t - prev);
+        prev = t;
+    }
+
+    long long currX = 0;
+
+    int verdict = 0;
+
+    tout << "n = " << n << endl;
+    for (int i = 0; i < n; ++i) {
+        long long targetX = targets[i];
+
+        tout << "target " << i + 1 << ": " << targetX << endl;
 
         while (true) {
             long long jump = ouf.readInt();
+
+            if (verdict == 0) {
+                tout << "current = " << currX << endl;
+                tout << "received jump = " << jump << endl;
+            }
+
+            if (currX + jump < -XMAX || currX + jump > XMAX) {
+                if (verdict == 0) {
+                    verdict = 1;
+                }
+            }
+
             if (currX < targetX && targetX <= currX + jump ||
                 currX > targetX && targetX >= currX + jump) {
+
                 totalTravel += abs(currX - targetX);
                 currX = targetX;
-                cout << "Yes " << currX << endl;
+            } else {
+                totalTravel += abs(jump);
+                currX += jump;
+            }
+
+
+            if (totalTravel > 8 * minPossibleTravel) {
+                if (verdict == 0) {
+                    verdict = 2;
+                }
+            }
+
+            if (currX == targetX) {
+                cout << "Yes " << currX << endl << flush;
+                tout << "found " << targetX << endl << flush;
                 break;
             } else {
-                currX += jump;
-                if (currX > XMAX || currX < -XMAX) {
-                    tout << "went-too-far" << endl << flush;
-                    quitf(_wa, "Went too far");
-                }
-                totalTravel += abs(jump);
-                cout << "No " << currX << endl;
+                cout << "No " << currX << endl << flush;
             }
-            cout.flush();
         }
+        tout << endl << flush;
     }
 
-    if (totalTravel <= 8 * minPossibleTravel) {
-        tout << "ok" << endl << flush;
-        quitf(_ok, "%lld steps leq 8 * %lld", totalTravel, minPossibleTravel);
-    } else {
-        tout << "too-many-steps" << endl << flush;
+    if (verdict == 0) {
+        tout << "ok";
+        quitf(_ok, "ok");
+    } else if (verdict == 1) {
+        tout << "Instruction sends too far";
+        quitf(_wa, "Instruction sends too far");
+    } else if (verdict == 2) {
+        tout << "Too many steps";
         quitf(_wa, "Too many steps");
     }
 }
