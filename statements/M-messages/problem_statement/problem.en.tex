@@ -1,24 +1,18 @@
 \problemname{Messages}
 
-\hnote{Rewrite.}
-Armen and Vartan like to use code words to talk to each other during the classes.
-Their code words are binary strings.
-Unfortunately, because of how they sit in the classroom, the teacher interrupts them when Vartan sends a message to Armen, and when Armen tries to decode the (possibly partial) message he received.
-In particular, when Vartan sends a message, Armen only receives some of the first bits (maybe all).
-Additionally, when Armen tries to read a code word from his cheat sheet, he only has time to read some of the first bits of it (again, maybe all).
-The number of bits Armen is able to read for a given code word depends on how good the handwriting is, thus, it is always the same for each code word, but varies between different ones.
-
-Now Armen wants to how well their system of communication works.
-Thus, he has asked you to tell him, given the information he has, how many code words could match each message he receives.
+While playing in the garden, Armen finds two ancient rocks which contain inscriptions.
+He discovers that the first rock contains $n$ secret binary code words, each written on a separate line on the rock.
+The second rock contains $m$ messages, each one is written on a single line on of the rock, using exactly one code word.
+Unfortunately, the rocks are broken and Armen can see only the prefixes of the original lines of the rocks.
+Thus, he may not be able to uniquely identify which code word matches each message.
+Nevertheless, he wants to know, for each message, how many code words can match it.
 
 \section*{Input}
-The first line of the input contains two integers $n$ and $m$ ($1 \leq n, m \leq 50000$), the number of code words that Armen and Vartan can use\enote{Maybe this should be "number of words that Armen can read?"}\hnote{better?}, and the number of messages Armen receives.
-The next $n$ lines of the input contain the partial code words that Armen is able to read, one per line, composed of $0$'s and $1$'s.
-Each line contains at least one character.
-The next $m$ lines describe the partial messages that Armen receives, in the same format as the code words.
-
-Armen is never able to read more than $10000$ bits from each code word, and he never receives more than $10000$ bits from Vartan.
-The total number of bits in the input (the sum of the lengths of the given binary strings) is at most $500000$.
+The first line of the input contains two integers $n$ and $m$ ($1 \leq n, m \leq 50000$), the number of code words and the number of messages, respectively.
+The next $n$ lines of the input contain binary strings, one per line, that represent the code words.
+After that, the next $m$ lines contain the binary strings that represent the messages.
+Each line on both of the rocks contains at least one character, and at most $10000$ characters.
+The total number of characters on the two rocks does not exceed $500000$.
 
 \section*{Output}
 The output contains $m$ lines.
