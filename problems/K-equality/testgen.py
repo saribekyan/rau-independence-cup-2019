@@ -1,7 +1,7 @@
 N_TESTS = 20
 
 NMAX = 100000
-WMAX = 10000
+WMAX = 1000
 
 import os
 import random
@@ -82,7 +82,7 @@ while curr_test <= N_TESTS:
     if curr_test % 3 == 0:
         print_test(randtest(n))
     else:
-        W = oscilating(n, WMAX * 4 // 5, random.randint(1, 100))
+        W = oscilating(n, WMAX * 4 // 5, random.randint(1, 40))
         if curr_test % 3 == 2:
             W = add(W, randtest(n, WMAX // 10))
         print_test(W)
