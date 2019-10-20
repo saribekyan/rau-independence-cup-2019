@@ -1,7 +1,7 @@
 N_TESTS = 24
 
 NMAX = 10 ** 9
-KXMAX = 50
+KXMAX = 40
 
 import os
 import random
@@ -68,7 +68,7 @@ while curr_test <= N_TESTS // 2:
 
 # edge cases
 print_test(NMAX, 'x', KXMAX, 'y', KXMAX)
-print_test(1, 'abcdefghij', KXMAX // 10, 'qwertyuiop', KXMAX // 10)
+print_test(1, 'abcdefgh', KXMAX // 8, 'qwertyui', KXMAX // 8)
 print_test(NMAX, 'a', 1, 'b', 1)
 print_test(NMAX, rand_str(KXMAX), 1, rand_str(KXMAX), 1)
 print_test(NMAX, rand_str(KXMAX, 1), 1, rand_str(KXMAX, 1), 1)
