@@ -2,6 +2,7 @@
 .*
 testgen
 check_[a-z]
+*tmp
 
 !.gitignore
 !.gitmodules
