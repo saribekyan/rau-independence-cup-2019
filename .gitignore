@@ -4,5 +4,6 @@ testgen
 check_[a-z]
 *tmp
 
+!statements.pdf
 !.gitignore
 !.gitmodules
